@@ -15,8 +15,8 @@ export class AboutComponent {
     {skill: 'Angular', progress: '10%'}
   ];
   soft = [
-    {name: 'Adobe Illustrator', src: '../../assets/img/ai.svg'},
-    {name: 'Photoshop', src: '../../assets/img/ps.svg'}
+    {name: 'Adobe Illustrator', src: './assets/img/ai.svg'},
+    {name: 'Photoshop', src: './assets/img/ps.svg'}
   ];
   languages = [
     {language: 'English', progress: '50%'},
