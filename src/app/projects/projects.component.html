@@ -1,0 +1,9 @@
+<section><h1 class="animated fadeInDown">Projects</h1>
+<div class="project-item animated fadeIn" [style.animation-delay] = "(i+1)*0.3+'s'" [style.background-image]='project.src' *ngFor="let project of projects; let i = index">
+  <a  (mouseover)="showTechnologies(i)" (mouseout)="showTechnologies(i)" class="project-link" target="_blank" [href]="project.href" ></a>
+  <div class="technologies" *ngIf="over && itemindex == i">
+    <span class="technology"  *ngFor="let technology of project.technologies">{{technology}}</span>
+  </div>
+</div>
+</section>
+

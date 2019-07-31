@@ -1,0 +1,100 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,700,900&display=swap');
+$light-grey: #c0c0c0;
+$grey: #333333;
+$green: #388e3c;
+$orange: #ffa000;
+$white: #ffffff;
+$font: 'Montserrat', sans-serif;
+$bold: 900;
+$icons-size: 30px;
+$medium: 700;
+$light: 300;
+$padding: 20px;
+$margin: 20px;
+$transition-speed:.3s;
+/*body{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}*/
+:host {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: stretch;
+
+  & > *:not(router-outlet) {
+    margin: $margin;
+  }
+}
+  nav{
+    display: flex;
+    align-items: center;
+    border-top: 1px solid $light-grey;
+    justify-content: space-between;
+
+    ul{
+      display: flex;
+      list-style-type: none;
+      li{
+        padding: $padding*2;
+        transition: $transition-speed;
+        &:hover{
+          cursor: pointer;
+        }
+      }
+      .active, li:hover{
+        outline: none;
+        background-color: $orange;
+        color: $white;
+      }
+      li:hover{
+        background-color: #FFB300;
+      }
+    }
+    div.social{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      svg{
+        height: $icons-size;
+        position: relative;
+        transition: $transition-speed;
+        margin: 0 $margin;
+        fill: $light-grey;
+        &:hover{
+          fill: $orange;
+          cursor: pointer;
+        }
+      }
+
+    }
+  }
+  ul.dots{
+    position:fixed;
+    vertical-align: middle;
+    right: -$margin/2;
+    top: 50%;
+    transform: translate(0, -50%);
+    li{
+      list-style-type: none;
+      width: 10px;
+      height: 10px;
+      outline: none;
+      transition: $transition-speed;
+      margin: $margin/1.5 $margin/2;
+      border-radius: 25px;
+      background-color: $light-grey;
+      &.active{
+        background-color: $orange;
+      }
+      &:hover{
+        cursor: pointer;
+      }
+    }
+  }
+

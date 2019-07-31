@@ -1,0 +1,23 @@
+<section>
+  <h1 class="animated fadeInRight">Contacts</h1>
+  <div class="column animated fadeInLeftBig">
+    <h2>Feel free to contact me</h2>
+    <ul class="block-wrapper " *ngFor="let contact of contacts; let i = index">
+      <li class="item animated fadeInUp " [style.animation-delay]=" i*0.3 + 's'" [ngSwitch]="contact.type">
+        <img [src]="contact.src" alt="contacts image" class="contacts-img">
+        <ng-template ngSwitchCase="mail"><a [href]="'mailto:'+contact.data">{{contact.data}}</a></ng-template>
+        <ng-template ngSwitchCase="web"><a [href]="contact.data" target="_blank">{{contact.name}}</a></ng-template>
+        <ng-template ngSwitchCase="social"><a class="social">{{contact.data}}</a></ng-template>
+      </li>
+    </ul>
+  </div>
+
+  <div class="column animated fadeIn">
+    <form method="POST" action="https://formspree.io/{{email}}">
+      <label for="email">Name:</label><input type="text"  id="name" name="text" placeholder="John Doe" required>
+      <label for="email">Email:</label><input type="email" id="email" name="email" placeholder="johndoe@example.org" required>
+      <label for="message">Message:</label><textarea name="message" id="message" placeholder="Message text" required></textarea>
+      <button type="submit">Send</button>
+    </form>
+  </div>
+</section>
